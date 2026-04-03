@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passo Final — Site de Elite</title>
+  <meta name="robots" content="index, follow">
+
+  <script>
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2203490870389778');
+    fbq('track', 'PageView');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAFAFA;
+      --surface: #FFFFFF;
+      --rose-bg: #FFF4F6;
+      --rose-mid: #FCE1E8;
+      --gold: #C9A84C;
+      --gold-light: #B8963D;
+      --gold-dim: rgba(201, 168, 76, 0.10);
+      --rose: #C4788A;
+      --rose-light: #B25D70;
+      --rose-dim: rgba(196, 120, 138, 0.12);
+      --rose-border: rgba(196, 120, 138, 0.35);
+      --off-white: #2C2623;
+      --muted: #6E645D;
+      --border: rgba(44, 38, 35, 0.12);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--bg);
+      color: var(--off-white);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.18;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+
+    /* Progress Bar Topbar */
+    .progress-bar-wrap {
+      background: #FFF4F6;
+      border-bottom: 2px solid var(--rose);
+      text-align: center;
+      padding: 12px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .progress-bar-wrap p {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--rose-light);
+      margin-bottom: 8px;
+    }
+    .progress-bar-bg {
+      background: var(--rose-dim);
+      border-radius: 100px;
+      height: 8px;
+      max-width: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      background: var(--rose);
+      height: 100%;
+      width: 90%;
+    }
+
+    .hero {
+      padding: 60px 24px 60px;
+      text-align: center;
+      background: var(--bg);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--rose-dim);
+      border: 1px solid var(--rose-border);
+      color: var(--rose-light);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--off-white);
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 em { font-style: italic; color: var(--rose-light); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    /* Video Placeholder */
+    .vsl-container {
+      max-width: 640px;
+      margin: 0 auto 40px;
+      background: #EFE9E6;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(196, 120, 138, 0.15);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--rose-border);
+    }
+    .vsl-placeholder-text {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: #FFFFFF;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 18px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(201, 168, 76, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+    }
+    
+    .downsell-link {
+      display: block;
+      margin-top: 24px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .downsell-link:hover { color: var(--rose-light); }
+
+    /* Section Beneficios */
+    .section-benefits {
+      padding: 60px 24px;
+      background: var(--rose-bg);
+      border-top: 1px solid var(--rose-border);
+      border-bottom: 1px solid var(--rose-border);
+      text-align: center;
+    }
+    .section-titulo {
+      font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+      font-weight: 600;
+      color: var(--off-white);
+      margin-bottom: 40px;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .benefit-card {
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(196, 120, 138, 0.06);
+      border: 1px solid var(--rose-border);
+      border-radius: 18px;
+      padding: 32px 24px;
+      text-align: left;
+    }
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--rose-dim);
+      border-radius: 14px;
+      margin-bottom: 16px;
+      color: var(--rose-light);
+      font-size: 1.5rem;
+    }
+    .benefit-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--off-white);
+    }
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Section Oferta final */
+    .section-oferta {
+      padding: 80px 24px;
+      background: var(--bg);
+      text-align: center;
+    }
+    .oferta-box {
+      max-width: 500px;
+      margin: 0 auto 40px;
+      background: var(--surface);
+      border: 1px solid var(--rose-border);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 16px 40px rgba(196, 120, 138, 0.12);
+    }
+    .oferta-box h3 {
+      font-family: 'Jost', sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--rose-light);
+      margin-bottom: 24px;
+    }
+    .oferta-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .oferta-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rose-border);
+      font-size: 0.95rem;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .oferta-list li:last-child { border-bottom: none; }
+    .check { color: var(--gold); font-weight: bold; }
+    
+    .preco-anchor {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .preco-anchor del { opacity: 0.6; }
+    .preco-real {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+    .preco-real span { font-size: 1.6rem; font-family: 'Jost', sans-serif; }
+
+    /* FAQ */
+    .section-faq {
+      padding: 60px 24px 80px;
+      background: var(--rose-bg);
+      border-top: 1px solid var(--rose-border);
+    }
+    .faq-wrap { max-width: 620px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid rgba(196, 120, 138, 0.14);
+      padding: 20px 0;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 0.96rem;
+      color: var(--off-white);
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: var(--rose-light); }
+    .faq-item[open] summary::after { content: '-'; }
+    .faq-answer {
+      margin-top: 12px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .rodape {
+      padding: 26px 24px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: #EFE9E6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="progress-bar-wrap">
+    <p>90% concluído... Não feche esta página!</p>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Oferta Única · Site de Elite</div>
+      <h1>O seu próximo passo: Saia do amadorismo e tenha uma presença de elite.<br><em>(Sem mensalidade)</em></h1>
+      <p class="hero-sub">Agora que você tem os scripts para fechar vendas, precisa de um lugar profissional para mostrar seu trabalho. Transforme seu Instagram em uma máquina de agendamentos.</p>
+      
+      <div class="vsl-container">
+        <div class="vsl-placeholder-text">[ Espaço para o Vídeo de Vendas (VSL) ]</div>
+      </div>
+
+      <a href="https://pay.kirvano.com/c9350d5a-247c-4b18-8729-dbc6631541e6" class="btn-primary">SIM! QUERO MEU SITE DE ELITE AGORA</a>
+      <a href="#" class="downsell-link">Não, eu prefiro continuar sem um site profissional e ignorar essa oferta.</a>
+    </div>
+  </section>
+
+  <section class="section-benefits">
+    <div class="container">
+      <h2 class="section-titulo">Por que você precisa do Site de Elite?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">✨</div>
+          <h3>Zero Mensalidade</h3>
+          <p>Esqueça hospedagens e domínios caros. Você terá um site profissional feito inteiramente no Canva, pagando absolutamente zero por mês.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📱</div>
+          <h3>Edição Simples</h3>
+          <p>Você já sabe mexer no Canva! Basta trocar as fotos, preencher seus dados, arrastar e soltar. Seu site pronto em questão de minutos.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💎</div>
+          <h3>Design de Luxo</h3>
+          <p>Um visual focado em passar autoridade. Quem acessa seu link percebe imediatamente o alto padrão, o que te permite cobrar muito mais caro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-oferta">
+    <div class="container">
+      <div class="oferta-box">
+        <h3>O que você vai receber</h3>
+        <ul class="oferta-list">
+          <li><span class="check">✓</span> Template Completo do Site de Elite</li>
+          <li><span class="check">✓</span> Tutorial Rápido Passo a Passo</li>
+          <li><span class="check">✓</span> Bônus: Modelo de Cartão Digital</li>
+          <li><span class="check">✓</span> Bônus: Guia de Organização do Link na Bio</li>
+        </ul>
+        
+        <div class="preco-anchor">De <del>R$ 297</del> por apenas 12x de R$ 4,70 ou</div>
+        <div class="preco-real"><span>R$</span> 47,00</div>
+        
+        <a href="https://pay.kirvano.com/c9350d5a-247c-4b18-8729-dbc6631541e6" class="btn-primary">SIM! QUERO ADICIONAR AO MEU PEDIDO</a>
+      </div>
+      <a href="#" class="downsell-link">Não, obrigado. Quero apenas acessar os materiais que já comprei.</a>
+    </div>
+  </section>
+
+  <section class="section-faq">
+    <div class="container faq-wrap">
+      <h2 class="section-titulo" style="text-align: center; margin-bottom: 30px;">Dúvidas Rápidas</h2>
+      
+      <details class="faq-item">
+        <summary>Eu preciso saber programação?</summary>
+        <div class="faq-answer">De jeito nenhum! O site inteiro é feito e editado pelo Canva. É só clicar, trocar as imagens pelos seus trabalhos e publicar. Sem códigos.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Não tenho o Canva Pro, tem problema?</summary>
+        <div class="faq-answer">Nenhum problema! O Template do Site de Elite foi desenhado para funcionar perfeitamente com os elementos gratuitos do Canva.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Tenho suporte se não conseguir colocar no ar?</summary>
+        <div class="faq-answer">Sim! Nós temos uma aula passo-a-passo mostrando onde clicar para publicar o seu site na internet grátis, e você tem acesso ao nosso suporte.</div>
+      </details>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    © Presença Certa · Oferta Especial Exclusiva
+  </footer>
+
+</body>
+</html>
