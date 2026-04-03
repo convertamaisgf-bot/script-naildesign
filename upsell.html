@@ -134,24 +134,53 @@
       line-height: 1.7;
     }
 
-    /* Video Placeholder */
-    .vsl-container {
-      max-width: 640px;
+    /* Sales Letter Box */
+    .sales-letter-box {
+      max-width: 580px;
       margin: 0 auto 40px;
-      background: #EFE9E6;
+      background: var(--surface);
+      border: 1px solid var(--gold-light);
       border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(196, 120, 138, 0.15);
-      aspect-ratio: 16 / 9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--rose-border);
+      padding: 36px 30px;
+      text-align: left;
+      box-shadow: 0 16px 40px rgba(201, 168, 76, 0.15);
+      position: relative;
     }
-    .vsl-placeholder-text {
+    .sales-letter-box::before {
+      content: "LEITURA RÁPIDA (1 MINUTO)";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: #FFF;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 6px 16px;
+      border-radius: 100px;
+    }
+    .sales-letter-box p {
+      font-size: 0.98rem;
       color: var(--muted);
-      font-weight: 500;
-      font-size: 1.1rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .sales-letter-box p strong {
+      color: var(--off-white);
+      font-weight: 600;
+    }
+    .sales-letter-box p.destaque {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--rose-light);
+      font-style: italic;
+      line-height: 1.5;
+      text-align: center;
+      margin: 28px 0;
+      border-top: 1px solid var(--rose-border);
+      border-bottom: 1px solid var(--rose-border);
+      padding: 16px 0;
     }
 
     .btn-primary {
@@ -351,12 +380,22 @@
       <h1>O seu próximo passo: Saia do amadorismo e tenha uma presença de elite.<br><em>(Sem mensalidade)</em></h1>
       <p class="hero-sub">Agora que você tem os scripts para fechar vendas, precisa de um lugar profissional para mostrar seu trabalho. Transforme seu Instagram em uma máquina de agendamentos.</p>
       
-      <div class="vsl-container">
-        <div class="vsl-placeholder-text">[ Espaço para o Vídeo de Vendas (VSL) ]</div>
+      <div class="sales-letter-box">
+        <p>Preste muita atenção: os Scripts que você acabou de garantir farão com que as clientes <strong>cheguem até a página de agendamento</strong> de forma muito mais rápida.</p>
+        
+        <p>Mas existe um "detalhe oculto" que separa as amadoras das profissionais de elite: <strong>A primeira impressão do seu Link.</strong></p>
+        
+        <p>Se a cliente clicar no seu link da Bio e cair num site feio ou numa ferramenta genérica que trava, a autoridade que os Scripts criaram "evapora" imediatamente. É por isso que você precisa de um <strong>Site de Elite</strong>.</p>
+        
+        <p class="destaque">"Mas sites profissionais são caros, eu teria que pagar mensalidade ou contratar web designers absurdas."<br><em>Até hoje.</em></p>
+        
+        <p>Eu desenhei um Template Premium 100% editável no <strong>Canva</strong>. Você não paga mensalidade de hospedagem. Você não digita nenhum código. É só arrastar e soltar as suas fotos, e ele gera o site profissional no celular.</p>
+        
+        <p>Na prática, isso significa que você vai poder cobrar mais caro pelo seu serviço porque a percepção de valor do seu atendimento no WhatsApp + o seu Link do Site formarão um verdadeiro combo de grife.</p>
       </div>
 
       <a href="https://pay.kirvano.com/c9350d5a-247c-4b18-8729-dbc6631541e6" class="btn-primary">SIM! QUERO MEU SITE DE ELITE AGORA</a>
-      <a href="#" class="downsell-link">Não, eu prefiro continuar sem um site profissional e ignorar essa oferta.</a>
+      <a href="downsell.html" class="downsell-link">Não, eu prefiro continuar sem um site profissional e ignorar essa oferta.</a>
     </div>
   </section>
 
@@ -399,7 +438,7 @@
         
         <a href="https://pay.kirvano.com/c9350d5a-247c-4b18-8729-dbc6631541e6" class="btn-primary">SIM! QUERO ADICIONAR AO MEU PEDIDO</a>
       </div>
-      <a href="#" class="downsell-link">Não, obrigado. Quero apenas acessar os materiais que já comprei.</a>
+      <a href="downsell.html" class="downsell-link">Não, obrigado. Quero apenas acessar os materiais que já comprei.</a>
     </div>
   </section>
 
