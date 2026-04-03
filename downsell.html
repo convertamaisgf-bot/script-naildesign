@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Última Chance — Site de Elite</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <script>
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2203490870389778');
+    fbq('track', 'PageView');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAFAFA;
+      --surface: #FFFFFF;
+      --rose-bg: #FFF4F6;
+      --rose-mid: #FCE1E8;
+      --gold: #C9A84C;
+      --gold-light: #B8963D;
+      --gold-dim: rgba(201, 168, 76, 0.10);
+      --rose: #C4788A;
+      --rose-light: #B25D70;
+      --rose-dim: rgba(196, 120, 138, 0.12);
+      --rose-border: rgba(196, 120, 138, 0.35);
+      --off-white: #2C2623;
+      --muted: #6E645D;
+      --border: rgba(44, 38, 35, 0.12);
+      --alert-bg: #FFF3EB;
+      --alert-border: #FFB085;
+      --alert-text: #A83800;
+      --btn-green: #2CB67D;
+      --btn-green-hover: #1e9d68;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--bg);
+      color: var(--off-white);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.18;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+
+    /* Alert Topbar */
+    .alert-bar-wrap {
+      background: var(--alert-bg);
+      border-bottom: 2px solid var(--alert-border);
+      text-align: center;
+      padding: 14px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .alert-bar-wrap p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--alert-text);
+      margin: 0;
+    }
+
+    .hero {
+      padding: 60px 24px 60px;
+      text-align: center;
+      background: var(--bg);
+    }
+    
+    .hero h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--off-white);
+      margin-bottom: 24px;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.1;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+    .hero-highlight {
+      background: rgba(44, 182, 125, 0.1);
+      border-left: 3px solid var(--btn-green);
+      padding: 16px 20px;
+      max-width: 560px;
+      margin: 0 auto 40px;
+      text-align: left;
+      font-weight: 500;
+      color: var(--off-white);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+    }
+
+    /* Timer */
+    .timer-wrap {
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+    .timer-wrap p {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--alert-text);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .timer-display {
+      font-family: 'Jost', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--off-white);
+      line-height: 1;
+    }
+
+    /* Price Comparation */
+    .price-box {
+      background: var(--surface);
+      border: 1px solid var(--rose-border);
+      border-radius: 20px;
+      padding: 36px 30px;
+      max-width: 480px;
+      margin: 0 auto 40px;
+      box-shadow: 0 16px 40px rgba(196, 120, 138, 0.12);
+    }
+    .preco-anchor {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .preco-anchor del { color: var(--rose-light); }
+    .preco-real {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--btn-green);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .preco-real span { font-size: 1.6rem; font-family: 'Jost', sans-serif; }
+    .preco-hint {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    /* Buttons */
+    .btn-green {
+      display: inline-block;
+      background: var(--btn-green);
+      color: #FFFFFF;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 20px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      box-shadow: 0 8px 24px rgba(44, 182, 125, 0.35);
+      animation: pulseGreen 2s infinite;
+    }
+    .btn-green:hover { background: var(--btn-green-hover); transform: translateY(-2px); }
+    
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(44, 182, 125, 0.6); }
+      70% { box-shadow: 0 0 0 15px rgba(44, 182, 125, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(44, 182, 125, 0); }
+    }
+    
+    .redirect-hint {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 16px;
+      margin-bottom: 24px;
+    }
+
+    .downsell-link {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .downsell-link:hover { color: var(--rose-light); }
+
+    .rodape {
+      padding: 26px 24px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: #EFE9E6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="alert-bar-wrap">
+    <p>⚠️ ATENÇÃO: Não feche esta página ou você perderá este desconto garantido.</p>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Eu realmente não quero que você continue sem um site profissional por causa de R$ 20,00.</h1>
+      
+      <p class="hero-sub">Eu sei que às vezes o orçamento aperta, mas eu acredito tanto que esse site vai mudar o seu jogo que decidi fazer algo muito especial hoje.</p>
+      
+      <div class="hero-highlight">
+        "Vou te dar um desconto exclusivo de recuperação agora. Você leva o MESMO Site de Elite (Template + Tutoriais + Bônus) pelo menor preço possível, sem pegadinhas."
+      </div>
+      
+      <div class="timer-wrap">
+        <p>Esta página expira em</p>
+        <div class="timer-display" id="timer">10:00</div>
+      </div>
+
+      <div class="price-box">
+        <div class="preco-anchor">De <del>R$ 47,00</del></div>
+        <div class="preco-real"><span>R$</span> 27,00</div>
+        <div class="preco-hint">Pagamento Único</div>
+      </div>
+
+      <a href="https://pay.kirvano.com/7e20d083-8210-4a97-a4cc-b0f816a4eb9d" class="btn-green">QUERO MEU SITE COM DESCONTO AGORA</a>
+      <p class="redirect-hint">Ao clicar, você será redirecionado para o checkout seguro da Kirvano com o desconto já engatilhado.</p>
+      
+      <a href="#" class="downsell-link">Não, eu prefiro perder essa oportunidade e continuar sem site.</a>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    © Presença Certa · Oferta Única
+  </footer>
+
+  <script>
+    // Simple 10 Min Countdown
+    let time = 600; // 10 minutes in seconds
+    const timerDisplay = document.getElementById('timer');
+
+    const updateTimer = () => {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      if (time > 0) time--;
+    };
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
