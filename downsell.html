@@ -13,6 +13,13 @@
     fbq('track', 'PageView');
   </script>
 
+  <script>
+    var offer = "7e20d083-8210-4a97-a4cc-b0f816a4eb9d";
+    var nextPageURL = "https://scriptdasunhas.vercel.app/obrigado.html";
+    var refusePageURL = "https://scriptdasunhas.vercel.app/obrigado.html";
+  </script>
+  <script src="https://snippets.kirvano.com/upsell.min.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -263,10 +270,10 @@
         <div class="preco-hint">Pagamento Único</div>
       </div>
 
-      <a href="https://pay.kirvano.com/7e20d083-8210-4a97-a4cc-b0f816a4eb9d" class="btn-green">QUERO MEU SITE COM DESCONTO AGORA</a>
-      <p class="redirect-hint">Ao clicar, você será redirecionado para o checkout seguro da Kirvano com o desconto já engatilhado.</p>
+      <a href="javascript:void(0)" class="btn-green kirvano-payment-trigger">QUERO MEU SITE COM DESCONTO AGORA</a>
+      <p class="redirect-hint">Ao clicar, o desconto será aplicado na hora direto no seu cartão primário.</p>
       
-      <a href="obrigado.html" class="downsell-link">Não, eu prefiro perder essa oportunidade e continuar sem site.</a>
+      <a href="javascript:void(0)" class="downsell-link kirvano-refuse-trigger">Não, eu prefiro perder essa oportunidade e continuar sem site.</a>
     </div>
   </section>
 
