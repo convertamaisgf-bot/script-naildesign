@@ -783,6 +783,28 @@
       }
     }
 
+    .urgency-banner {
+      background: rgba(196, 120, 138, 0.18);
+      border: 1px solid rgba(196, 120, 138, 0.35);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin: 0 auto 24px;
+      max-width: 500px;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--off-white);
+      line-height: 1.4;
+      backdrop-filter: blur(8px);
+    }
+    .urgency-banner .small-text {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--rose-light);
+      margin-top: 4px;
+    }
+
     @media (max-width: 720px) {
       .garantia-inner {
         flex-direction: column;
@@ -809,6 +831,10 @@
         <p class="hero-sub">Saiba exatamente o que responder para <strong>guiar a cliente até o agendamento</strong> —
           com segurança, postura profissional e sem nunca mais travar na hora de passar o preço.</p>
         <div class="hero-price-top">por apenas R$37 · acesso imediato · 7 dias de garantia</div>
+        <div class="urgency-banner">
+          ⚠️ Preço de lançamento — R$37 só durante o lançamento
+          <span class="small-text">Após o período de lançamento, o valor volta para R$97.</span>
+        </div>
         <a href="https://pay.kirvano.com/cb5eb1d5-2309-4a70-85da-1aaa34e9c0a8" class="btn-primary" target="_blank"
           rel="noopener noreferrer">Quero meus Scripts Prontos por R$37</a>
         <p class="hero-price-hint">por apenas <strong>R$37</strong> · acesso imediato</p>
