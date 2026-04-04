@@ -1,286 +1,244 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sucesso — Seu Acesso</title>
-  <meta name="robots" content="noindex, nofollow">
-
+  <title>Parabéns! — Fecha Logo</title>
+  
   <script>
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2203490870389778');
     fbq('track', 'PageView');
+    fbq('track', 'Purchase');
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #FAFAFA;
-      --surface: #FFFFFF;
-      --rose-bg: #FFF4F6;
-      --gold: #C9A84C;
-      --gold-dim: rgba(201, 168, 76, 0.10);
-      --rose: #C4788A;
-      --rose-light: #B25D70;
-      --rose-border: rgba(196, 120, 138, 0.35);
-      --off-white: #2C2623;
-      --muted: #6E645D;
-      --success-green: #2CB67D;
+      --bg-geral: #FAF7F4;
+      --bg-cards: #FFFFFF;
+      --bg-alt: #F5EDE8;
+      --text-titulos: #2C1A0E;
+      --text-corrido: #5C4033;
+      --text-muted: #9E8070;
+      --accent: #B8860B;
+      --btn-green: #6B7C4E;
+      --borda: #EDE0D8;
+      --separador: #D4B896;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Jost', sans-serif;
-      background: var(--bg);
-      color: var(--off-white);
-      font-size: 16px;
-      line-height: 1.75;
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg-geral);
+      color: var(--text-corrido);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3 {
-      font-family: 'Cormorant Garamond', serif;
-      line-height: 1.18;
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-titulos);
+      line-height: 1.25;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    a { text-decoration: none; }
 
-    .hero-success {
-      padding: 80px 24px 40px;
+    /* PARABENS SECTION */
+    .section-principal {
+      padding: 80px 24px;
+      background: var(--bg-geral);
       text-align: center;
     }
-
-    .icon-success {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 72px;
-      height: 72px;
-      background: rgba(44, 182, 125, 0.12);
-      color: var(--success-green);
+    .icone-check {
+      width: 80px; height: 80px;
+      background: rgba(107, 124, 78, 0.1);
+      color: var(--btn-green);
       border-radius: 50%;
-      margin-bottom: 24px;
-    }
-    .icon-success svg {
-      width: 40px;
-      height: 40px;
-    }
-
-    .hero-success h1 {
-      font-size: clamp(2rem, 5vw, 2.5rem);
-      font-weight: 600;
-      color: var(--off-white);
-      margin-bottom: 12px;
-    }
-
-    .hero-success p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      font-weight: 400;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    .section-instructions {
-      padding: 0 24px 60px;
-    }
-
-    .instructions-box {
-      background: var(--surface);
-      border: 1px solid var(--rose-border);
-      border-radius: 20px;
-      padding: 40px 32px;
-      box-shadow: 0 16px 40px rgba(196, 120, 138, 0.08);
-      margin-bottom: 40px;
-    }
-
-    .instructions-box h3 {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--rose-light);
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .steps-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .step-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .step-number {
-      width: 32px;
-      min-width: 32px;
-      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--gold);
-      color: #FFF;
-      border-radius: 50%;
-      font-weight: 600;
-      font-size: 0.9rem;
+      margin: 0 auto 24px;
     }
-
-    .step-content p {
-      font-size: 0.95rem;
-      color: var(--off-white);
-      line-height: 1.5;
-    }
-    .step-content p strong {
-      color: var(--gold);
-    }
-
-    .purchase-summary {
-      background: var(--rose-bg);
-      border: 1px solid var(--rose-border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 40px;
-    }
-
-    .purchase-summary h4 {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--rose);
-      margin-bottom: 12px;
-    }
-
-    .purchase-list {
-      list-style: none;
-      font-size: 0.9rem;
-    }
-    .purchase-list li {
-      padding: 6px 0;
-      border-bottom: 1px dashed rgba(196, 120, 138, 0.2);
-    }
-    .purchase-list li:last-child {
-      border: none;
-    }
-    .purchase-list li::before {
-      content: "✦";
-      color: var(--gold);
-      margin-right: 8px;
-    }
-
-    .social-banner {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .social-banner p {
-      font-size: 0.95rem;
-      color: var(--muted);
+    .icone-check svg { width: 44px; height: 44px; }
+    
+    .section-principal h1 {
+      font-size: 2.5rem;
       margin-bottom: 16px;
     }
-    .btn-instagram {
-      display: inline-block;
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-      color: #FFFFFF;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      padding: 14px 32px;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.2s;
-    }
-    .btn-instagram:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(220, 39, 67, 0.3);
+    .section-principal p.sub {
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto 48px;
     }
 
-    .rodape {
+    .passos-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .passo-card {
+      background: var(--bg-cards);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
       padding: 32px 24px;
+      text-align: left;
+    }
+    .passo-numero {
+      width: 32px; height: 32px;
+      background: var(--bg-alt);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+    .passo-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .passo-card p {
+      font-size: 0.95rem;
+    }
+
+    /* OUTRAS SOLUÇÕES */
+    .section-solucoes {
+      padding: 80px 24px;
+      background: var(--bg-cards);
       text-align: center;
-      background: #EFE9E6;
     }
-    .rodape p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 4px;
+    .separador {
+      color: var(--separador);
+      font-size: 1.2rem;
+      letter-spacing: 8px;
+      margin-bottom: 40px;
     }
-    .rodape a {
-      color: var(--rose-light);
-      text-decoration: none;
+    .section-solucoes h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .solucoes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .solucao-card {
+      background: var(--bg-geral);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .solucao-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+    .solucao-card p {
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--btn-green);
+      color: var(--btn-green);
+      padding: 12px 24px;
+      border-radius: 8px;
       font-weight: 500;
+      transition: all 0.2s;
     }
+    .btn-outline:hover {
+      background: var(--btn-green);
+      color: #FFF;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--text-titulos);
+      color: var(--text-muted);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .footer a { color: var(--text-muted); text-decoration: underline; }
   </style>
 </head>
-
 <body>
 
-  <section class="hero-success">
+  <section class="section-principal">
     <div class="container">
-      <div class="icon-success">
+      <div class="icone-check">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
         </svg>
       </div>
+      
       <h1>Parabéns! Seu acesso está sendo liberado.</h1>
-      <p>Você deu um passo gigante para profissionalizar seu atendimento e sua presença digital.</p>
-    </div>
-  </section>
-
-  <section class="section-instructions">
-    <div class="container">
-      <div class="instructions-box">
-        <h3>Passo a Passo do Acesso</h3>
-        <div class="steps-list">
-          <div class="step-item">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <p>Verifique a caixa de entrada do seu <strong>e-mail</strong> agora mesmo. Procure por uma mensagem enviada pela plataforma <strong>Kirvano</strong>.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <p>Abra o e-mail e clique no botão verde para <strong>criar sua senha</strong> ou acessar automaticamente os seus materiais e bônus.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <p>Atenção especial: Se o e-mail não estiver na caixa principal, procure nas pastas de <strong>Lixo Eletrônico (Spam)</strong> ou Promoções.</p>
-            </div>
-          </div>
+      <p class="sub">Você deu um passo gigante para profissionalizar seu atendimento.</p>
+      
+      <div class="passos-container">
+        <div class="passo-card">
+          <div class="passo-numero">1</div>
+          <h3>Verifique seu e-mail</h3>
+          <p>Procure uma mensagem enviada pela plataforma Kirvano.</p>
+        </div>
+        <div class="passo-card">
+          <div class="passo-numero">2</div>
+          <h3>Acesse seu material</h3>
+          <p>Clique no botão do e-mail para criar sua senha ou acessar diretamente.</p>
+        </div>
+        <div class="passo-card">
+          <div class="passo-numero">3</div>
+          <h3>Atenção ao spam</h3>
+          <p>Se não encontrar na caixa principal, verifique as pastas de Spam ou Promoções.</p>
         </div>
       </div>
-
-
-
-
     </div>
   </section>
 
-  <footer class="rodape">
-    © Presença Certa · Material Profissional
+  <section class="section-solucoes">
+    <div class="container">
+      <div class="separador">✦ ✦ ✦</div>
+      <h2>Conheça outras soluções da Presença Certa:</h2>
+      
+      <div class="solucoes-grid">
+        <div class="solucao-card">
+          <h3>Site Profissional</h3>
+          <p>Tenha sua presença online em 24h.</p>
+          <a href="https://presencacerta.com.br/siteprofissional" class="btn-outline" target="_blank">Saiba mais</a>
+        </div>
+        <div class="solucao-card">
+          <h3>Scripts Personalizados</h3>
+          <p>Scripts escritos para o seu negócio.</p>
+          <a href="https://presencacerta.com.br/scriptpersonalizado" class="btn-outline" target="_blank">Saiba mais</a>
+        </div>
+        <div class="solucao-card">
+          <h3>Automação de Atendimento</h3>
+          <p>Responda clientes no automático.</p>
+          <a href="https://presencacerta.com.br/automacoes" class="btn-outline" target="_blank">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <a href="https://presencacerta.com.br" target="_blank">Presença Certa</a> · Todos os direitos reservados</p>
+    <p>Este produto é digital e o acesso é enviado após a confirmação do pagamento.</p>
   </footer>
 
 </body>

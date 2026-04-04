@@ -1,1102 +1,864 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scripts Prontos para Manicures — Fecha Logo</title>
-  <meta name="description"
-    content="Pack Scripts Prontos para Manicures e Nail Designers fecharem mais clientes no WhatsApp. Scripts de atendimento prontos para usar. R$19,90.">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Scripts Prontos para Manicures — Fecha Logo">
-  <meta property="og:description"
-    content="Scripts prontos para manicures e nail designers fecharem mais no WhatsApp — sem parecer desesperada e sem improvisar.">
-  <meta property="og:type" content="website">
-
+  
   <script>
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2203490870389778');
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #FAFAFA;
-      --surface: #FFFFFF;
-      --rose-bg: #FFF4F6;
-      --rose-mid: #FCE1E8;
-      --gold: #C9A84C;
-      --gold-light: #B8963D;
-      --gold-dim: rgba(201, 168, 76, 0.10);
-      --rose: #C4788A;
-      --rose-light: #B25D70;
-      --rose-dim: rgba(196, 120, 138, 0.12);
-      --rose-border: rgba(196, 120, 138, 0.35);
-      --off-white: #2C2623;
-      --muted: #6E645D;
-      --border: rgba(44, 38, 35, 0.12);
+      --bg-geral: #FAF7F4;
+      --bg-cards: #FFFFFF;
+      --bg-alt: #F5EDE8;
+      --text-titulos: #2C1A0E;
+      --text-corrido: #5C4033;
+      --text-muted: #9E8070;
+      --accent: #B8860B;
+      --btn-green: #6B7C4E;
+      --borda: #EDE0D8;
+      --separador: #D4B896;
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Jost', sans-serif;
-      background: var(--bg);
-      color: var(--off-white);
-      font-size: 16px;
-      line-height: 1.75;
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg-geral);
+      color: var(--text-corrido);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Cormorant Garamond', serif;
-      line-height: 1.18;
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-titulos);
+      line-height: 1.25;
     }
 
+    em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    a { text-decoration: none; }
+
     .container {
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .ornament {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin: 0 auto 36px;
-    }
-
-    .ornament::before,
-    .ornament::after {
-      content: '';
-      width: 40px;
-      height: 1px;
-      background: var(--rose);
-      opacity: 0.4;
-    }
-
-    .ornament-dot {
-      font-size: 0.5rem;
-      letter-spacing: 5px;
-      color: var(--rose);
-      opacity: 0.6;
-    }
-
-    .hero {
-      padding: 88px 24px 72px;
-      text-align: center;
-      background:
-        radial-gradient(ellipse at center, rgba(250, 250, 250, 0.60) 0%, rgba(250, 250, 250, 0.96) 100%),
-        url('/hero-bg.png');
-      background-size: cover;
-      background-position: center center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0%, rgba(250, 250, 250, 0.0) 100%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-badge {
+    .badge {
       display: inline-block;
-      background: var(--rose-dim);
-      border: 1px solid var(--rose-border);
-      
-      color: var(--rose-light);
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
+      background: var(--bg-alt);
+      color: var(--accent);
+      border: 1px solid var(--separador);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 6px 20px;
+      padding: 8px 20px;
       border-radius: 100px;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5.5vw, 3.2rem);
-      font-weight: 700;
-      color: var(--off-white);
-      margin-bottom: 22px;
-      max-width: 580px;
-      margin-left: auto;
-      margin-right: auto;
-      
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--rose-light);
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 500px;
-      margin: 0 auto 44px;
-      font-weight: 400;
-      line-height: 1.85;
-    }
-
-    .hero-sub strong {
-      color: var(--off-white);
-      font-weight: 500;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--gold);
-      color: #FFFFFF;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 16px 40px;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(201, 168, 76, 0.4), 0 0 15px rgba(201, 168, 76, 0.25);
-    }
-
-    .btn-primary:active {
-      transform: translateY(0);
-    }
-
-    .hero-price-hint {
-      font-size: 0.76rem;
-      color: var(--muted);
-      margin-top: 16px;
-      letter-spacing: 0.04em;
-    }
-
-    .hero-price-hint strong {
-      color: var(--gold);
-    }
-
-    .section-dor {
-      padding: 76px 24px;
-      background: var(--rose-bg);
-      border-top: 1px solid var(--rose-border);
-      border-bottom: 1px solid var(--rose-border);
-    }
-
-    .section-dor .inner {
-      max-width: 580px;
-      margin: 0 auto;
-    }
-
-    .section-dor p {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-      line-height: 1.9;
-      font-weight: 400;
-    }
-
-    .section-dor p strong {
-      color: var(--off-white);
-      font-weight: 500;
-    }
-
-    .section-dor p.highlight {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-style: italic;
-      color: var(--rose-light);
-      border-left: 2px solid var(--rose);
-      padding-left: 20px;
-      margin: 32px 0;
-      line-height: 1.75;
-    }
-
-    .section-produto {
-      padding: 80px 24px;
-      background: var(--bg);
-      text-align: center;
-    }
-
-    .section-titulo {
-      font-size: clamp(1.7rem, 4.5vw, 2.4rem);
-      font-weight: 600;
-      color: var(--off-white);
-      margin-bottom: 10px;
-    }
-
-    .section-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 52px;
-      max-width: 460px;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: 400;
-    }
-
-    .scripts-label,
-    .bonus-label,
-    .faq-item summary,
-    .faq-answer,
-    .garantia-text p,
-    .rodape,
-    .rodape a,
-    .preco-mini,
-    .script-desc,
-    .section-sub,
-    .section-dor p,
-    .hero-sub,
-    .hero-price-hint,
-    .scripts-list li,
-    .bonus-card p {
-      font-family: 'Jost', sans-serif;
-    }
-
-    .scripts-list li,
-    .bonus-card p {
-      font-family: 'Jost', sans-serif;
-    }
-
-    .scripts-label,
-    .bonus-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
       margin-bottom: 24px;
     }
 
-    .scripts-list {
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto 60px;
+    .btn-green {
+      display: inline-block;
+      background: var(--btn-green);
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 20px 32px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+      transition: opacity 0.2s;
+    }
+    .btn-green:hover { opacity: 0.9; }
+
+    .separador {
+      color: var(--separador);
+      text-align: center;
+      font-size: 1.2rem;
+      letter-spacing: 8px;
+      margin: 40px 0 24px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      background-color: var(--bg-alt);
+      background-image: url('/public/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 24px 80px;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(250, 247, 244, 0.75);
+    }
+    .hero .container { position: relative; z-index: 2; }
+    
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .hero p.sub {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .hero .linha-discreta {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+    .faixa-urgencia {
+      color: var(--accent);
+      background: rgba(184, 134, 11, 0.08);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      border: 1px solid var(--separador);
+      border-radius: 8px;
+      max-width: 540px;
+      margin: 0 auto 24px;
+    }
+    .hero .txt-btn-baixo {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* DOR SECTION */
+    .section-dor {
+      padding: 20px 24px;
+      background: var(--bg-geral);
+    }
+    .dor-content {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      background: var(--bg-cards);
+      padding: 48px 40px;
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(44, 26, 14, 0.04);
+      border: 1px solid var(--borda);
+      position: relative;
+    }
+    .dor-content::before {
+      content: "“";
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      color: rgba(184, 134, 11, 0.1);
+      position: absolute;
+      top: 10px;
+      left: 24px;
+      line-height: 1;
+    }
+    .dor-content .destaque-dor {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--text-titulos);
+      font-weight: bold;
+      margin-bottom: 24px;
+      line-height: 1.3;
+      position: relative;
+      z-index: 2;
+    }
+    .dor-content p {
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .dor-content p:last-child { margin-bottom: 0; }
+
+    /* SCRIPTS SECTION */
+    .section-scripts {
+      background: var(--bg-cards);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .section-scripts h2 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 16px;
+    }
+    .section-scripts p.sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+    .grid-scripts {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
     }
-
-    .scripts-list li {
-      background: var(--surface);
-      box-shadow: 0 8px 24px rgba(196, 120, 138, 0.10);
-      
-      border: 1px solid var(--rose-border);
-      border-radius: 18px;
-      padding: 28px 24px;
+    .card-script {
+      background: var(--bg-cards);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: left;
+      color: var(--text-corrido);
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-      transition: border-color 0.3s, transform 0.3s;
     }
-
-    .scripts-list li:hover {
-      border-color: var(--gold);
+    .card-script:hover {
       transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(44, 26, 14, 0.05);
+      border-color: rgba(184, 134, 11, 0.2);
     }
-
-    @media (min-width: 640px) {
-      .scripts-list li:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-      }
-    }
-
-    .scripts-list li .num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      color: var(--gold);
-      line-height: 1;
-      opacity: 0.9;
-    }
-
-    .scripts-list li span:last-child {
-      font-size: 0.93rem;
-      color: var(--off-white);
-      font-weight: 400;
-      line-height: 1.6;
-    }
-
-    .bonus-label {
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .bonus-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-      gap: 14px;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .bonus-card {
-      background: var(--surface);
-      box-shadow: 0 8px 24px rgba(196, 120, 138, 0.10);
-      
-      border: 1px solid var(--rose-border);
-      border-radius: 18px;
-      padding: 26px 20px;
-      text-align: left;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .bonus-card:hover {
-      border-color: var(--rose);
-    }
-
-    .bonus-icon-wrap {
-      width: 40px;
-      height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      border: 1px solid rgba(196, 120, 138, 0.18);
-      border-radius: 14px;
-      background: rgba(196, 120, 138, 0.05);
-    }
-
-    .bonus-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: var(--off-white);
-    }
-
-    .bonus-card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
-      font-weight: 400;
-    }
-
-    .section-oferta {
-      padding: 84px 24px;
-      background: linear-gradient(180deg, #FAFAFA 0%, #FFF4F6 100%);
-      text-align: center;
-      border-top: 1px solid rgba(196, 120, 138, 0.12);
-      border-bottom: 1px solid rgba(196, 120, 138, 0.12);
-    }
-
-    .oferta-card {
-      max-width: 520px;
-      margin: 0 auto;
-      background: var(--surface);
-      
-      border: 1px solid rgba(201, 168, 76, 0.18);
-      border-radius: 26px;
-      padding: 40px 28px;
-      box-shadow: 0 16px 40px rgba(196, 120, 138, 0.15);
-    }
-
-    .oferta-label {
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--rose-light);
-      margin-bottom: 18px;
-    }
-
-    .oferta-card h2 {
-      font-size: clamp(2rem, 5vw, 2.7rem);
-      color: var(--off-white);
+    .script-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: rgba(184, 134, 11, 0.6);
+      font-weight: bold;
       margin-bottom: 12px;
-    }
-
-    .oferta-card h2 em {
+      line-height: 1;
       font-style: italic;
-      color: var(--rose-light);
     }
-
-    .oferta-desc {
-      font-size: 0.92rem;
-      color: var(--muted);
-      max-width: 360px;
-      margin: 0 auto 26px;
-      font-weight: 400;
-    }
-
-    .preco-antigo {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: -4px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-    }
-
-    .preco-antigo del {
-      opacity: 0.6;
-      padding-left: 4px;
-    }
-
-    .preco-atual {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 6px;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .preco-atual .currency {
-      font-family: 'Jost', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      opacity: 0.9;
-      margin-bottom: 8px;
-    }
-
-    .preco-atual .value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4.5rem, 10vw, 6rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 0.95;
-      
-    }
-
-    .preco-mini {
-      font-size: 0.68rem;
-      color: var(--muted);
-      margin-top: 20px;
-      margin-bottom: 36px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    .oferta-lista {
-      list-style: none;
-      max-width: 360px;
-      margin: 0 auto 32px;
-      text-align: left;
-    }
-
-    .oferta-lista li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--rose-border);
-      font-size: 0.9rem;
-      color: var(--off-white);
-      font-weight: 400;
-    }
-
-    .oferta-lista li:last-child {
-      border-bottom: none;
-    }
-
-    .check {
-      color: var(--gold);
-      line-height: 1.3;
-      font-size: 0.95rem;
-      margin-top: 1px;
-    }
-
-    .compra-segura {
-      margin-top: 16px;
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
-
-    .section-garantia {
-      padding: 74px 24px;
-      background: var(--bg);
-      text-align: center;
-    }
-
-    .garantia-inner {
-      max-width: 520px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 26px;
-    }
-
-    .garantia-badge {
-      width: 88px;
-      min-width: 88px;
-      height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .garantia-text h3 {
-      font-size: 1.7rem;
-      color: var(--off-white);
-      margin-bottom: 10px;
-    }
-
-    .garantia-text p {
-      font-size: 0.87rem;
-      color: var(--muted);
-      line-height: 1.85;
-      font-weight: 400;
-    }
-
-    .section-faq {
-      padding: 80px 24px 96px;
-      background: var(--rose-bg);
-      border-top: 1px solid var(--rose-border);
-    }
-
-    .faq-wrap {
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid rgba(196, 120, 138, 0.14);
-      padding: 20px 0;
-    }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      font-size: 0.96rem;
-      color: var(--off-white);
-      font-weight: 400;
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .faq-item summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-item summary::after {
-      content: '+';
-      color: var(--rose-light);
-      font-size: 1rem;
-      line-height: 1;
-      transition: transform 0.2s;
-      margin-top: 4px;
-    }
-
-    .faq-item[open] summary::after {
-      transform: rotate(45deg);
-    }
-
-    .faq-answer {
-      margin-top: 12px;
-      font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.8;
-      font-weight: 400;
-    }
-
-    .section-cta-final {
-      padding: 84px 24px 92px;
-      background: linear-gradient(180deg, #FFF4F6 0%, #FAFAFA 100%);
-      text-align: center;
-    }
-
-    .cta-final-card {
+    .card-full {
+      grid-column: 1 / -1;
       max-width: 600px;
       margin: 0 auto;
     }
 
-    .cta-final-card h2 {
-      font-size: clamp(2rem, 5vw, 2.9rem);
-      margin-bottom: 16px;
-      color: var(--off-white);
-    }
-
-    .cta-final-card h2 em {
-      color: var(--rose-light);
-      font-style: italic;
-    }
-
-    .cta-final-card p {
-      max-width: 470px;
-      margin: 0 auto 32px;
-      font-size: 0.93rem;
-      color: var(--muted);
-      font-weight: 400;
-      line-height: 1.85;
-    }
-
-    .rodape {
-      padding: 26px 24px 36px;
-      text-align: center;
-      font-size: 0.72rem;
-      color: var(--muted);
-      background: #EFE9E6;
-      line-height: 1.9;
-    }
-
-    .rodape a {
-      color: var(--rose-light);
-    }
-
-    .hero-price-top {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 24px;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-    }
-
-    .pratica-section {
-      margin: 30px auto 70px;
-      max-width: 440px;
+    /* EXEMPLO SECTION */
+    .section-exemplo {
+      background: var(--bg-geral);
+      padding: 80px 24px;
       text-align: center;
     }
-    .pratica-section h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      color: var(--off-white);
-      margin-bottom: 6px;
+    .section-exemplo h2 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
     }
-    .pratica-section p.sub {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 24px;
+    .section-exemplo p.sub {
+      color: var(--text-muted);
+      margin-bottom: 40px;
     }
     .chat-box {
-      background: #F0F0F0;
+      background: #ECE5DD;
+      border: 1px solid var(--borda);
       border-radius: 16px;
-      padding: 24px;
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+    }
+    .chat-header {
+      background: var(--btn-green);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+    .chat-header .avatar {
+      width: 42px; height: 42px;
+      background: var(--bg-geral);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--btn-green);
+      font-weight: bold;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.2rem;
+    }
+    .chat-header .info h4 {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0; font-size: 1rem; color: #FFF; font-weight: 500;
+    }
+    .chat-header .info p {
+      margin: 0; font-size: 0.8rem; color: rgba(255,255,255,0.8);
+    }
+    .chat-body {
+      padding: 24px 16px;
       display: flex;
       flex-direction: column;
       gap: 16px;
-      text-align: left;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      background-color: var(--bg-alt);
+      background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+      background-size: cover;
+      background-blend-mode: soft-light;
     }
-    .chat-msg {
+    .balao {
       padding: 12px 16px;
-      max-width: 85%;
+      border-radius: 12px;
       font-size: 0.95rem;
-      line-height: 1.4;
       color: #111;
-    }
-    .chat-msg.right {
-      align-self: flex-end;
-      background: #DCF8C6;
-      border-radius: 16px 16px 0 16px;
-    }
-    .chat-msg.left {
-      align-self: flex-start;
-      background: #E0E0E0;
-      border-radius: 16px 16px 16px 0;
-    }
-    .chat-caption {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-top: 16px;
-      text-align: center;
-    }
-
-    .preco-urgencia {
-      font-size: 0.85rem;
-      color: var(--gold);
-      margin-bottom: 36px;
-      font-weight: 500;
-    }
-
-    .section-depoimentos {
-      padding: 80px 24px;
-      background: var(--bg);
-      text-align: center;
-      border-top: 1px solid rgba(196, 120, 138, 0.12);
-    }
-    .depoimentos-grid {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-      margin-top: 36px;
-    }
-    .depoimento-img {
-      border-radius: 12px;
-      max-width: 340px;
-      width: 100%;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-      object-fit: contain;
-    }
-    @media (max-width: 768px) {
-      .depoimentos-grid {
-        flex-direction: column;
-      }
-    }
-
-    .urgency-banner {
-      background: #FFF4F6;
-      border: 1px solid var(--rose-border);
-      border-radius: 12px;
-      padding: 14px 20px;
-      margin: 0 auto 24px;
-      max-width: 500px;
-      text-align: center;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--off-white);
       line-height: 1.4;
-      
+      max-width: 85%;
+      text-align: left;
+      position: relative;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
-    .urgency-banner .small-text {
+    .balao.dir {
+      background: #EAF0E3;
+      align-self: flex-end;
+      border-top-right-radius: 0;
+    }
+    .balao.esq {
+      background: #FFFFFF;
+      align-self: flex-start;
+      border-top-left-radius: 0;
+    }
+    .balao.dir::after {
+      content: ""; position: absolute;
+      top: 0; right: -8px;
+      width: 0; height: 0;
+      border-top: 0 solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 10px solid #EAF0E3;
+    }
+    .balao.esq::before {
+      content: ""; position: absolute;
+      top: 0; left: -8px;
+      width: 0; height: 0;
+      border-top: 0 solid transparent;
+      border-bottom: 12px solid transparent;
+      border-right: 10px solid #FFFFFF;
+    }
+    .chat-time {
       display: block;
+      text-align: right;
+      font-size: 0.7rem;
+      color: rgba(0,0,0,0.45);
+      margin-top: 6px;
+    }
+    .chat-legenda {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* BONUS SECTION */
+    .section-bonus {
+      background: var(--bg-cards);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .grid-bonus {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .card-bonus {
+      background: var(--bg-geral);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 32px 20px;
+      text-align: left;
+    }
+    .card-bonus h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-titulos);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-bonus h4::before {
+      content: "✧";
+      color: var(--accent);
+      font-size: 1.4rem;
+    }
+    .card-bonus p {
       font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--rose-light);
-      margin-top: 4px;
+      color: var(--text-corrido);
     }
 
-    @media (max-width: 720px) {
-      .garantia-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .hero {
-        background-position: 64% center;
-      }
+    /* DEPOIMENTOS */
+    .section-depoimentos {
+      background: linear-gradient(180deg, var(--bg-geral) 0%, var(--bg-alt) 100%);
+      padding: 80px 24px;
+      text-align: center;
     }
+    .section-depoimentos h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+    }
+    .grid-depoimentos {
+      display: grid;
+      gap: 48px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .depo-card {
+      background: var(--bg-cards);
+      padding: 32px 32px 40px;
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(44, 26, 14, 0.05);
+      border: 1px solid var(--borda);
+      transition: transform 0.3s ease;
+    }
+    .depo-card:hover { transform: translateY(-4px); }
+    .depo-card img {
+      border-radius: 12px;
+      margin-bottom: 24px;
+      border: 1px solid var(--borda);
+      display: block;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .depo-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--text-titulos);
+      margin-bottom: 12px;
+      line-height: 1.35;
+      font-style: italic;
+    }
+    .depo-author {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* OFERTA */
+    .section-oferta {
+      background: var(--bg-cards);
+      padding: 80px 24px;
+    }
+    .card-oferta {
+      background: var(--bg-cards);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 56px 40px;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 24px 48px rgba(44, 26, 14, 0.05);
+    }
+    .card-oferta h2 {
+      font-size: 2.3rem;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .card-oferta .oferta-ancora {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .card-oferta p.sub {
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .preco-riscado {
+      color: var(--text-muted);
+      font-size: 1rem;
+      text-decoration: line-through;
+    }
+    .preco-real {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .preco-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .urgencia-pequena {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+    .lista-oferta {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    .lista-oferta li {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .check {
+      color: var(--btn-green);
+      font-weight: bold;
+    }
+
+    /* GARANTIA */
+    .section-garantia {
+      background: var(--bg-geral);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .selo-garantia {
+      width: 64px; height: 64px;
+      background: var(--btn-green);
+      color: #FFF;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      line-height: 1;
+    }
+    .section-garantia h2 { font-size: 1.8rem; margin-bottom: 16px; }
+    .section-garantia p { max-width: 500px; margin: 0 auto; color: var(--text-corrido); }
+
+    /* FAQ */
+    .section-faq {
+      background: var(--bg-cards);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .section-faq h2 { font-size: 2.2rem; margin-bottom: 8px; }
+    .section-faq p.sub { color: var(--text-muted); margin-bottom: 40px; }
+    .faq-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .faq-item {
+      background: var(--bg-geral);
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      padding: 20px 24px;
+    }
+    .faq-item summary {
+      font-weight: 600;
+      color: var(--text-titulos);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      outline: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: var(--accent); font-weight: normal; }
+    .faq-item[open] summary::after { content: '-'; }
+    .faq-item p {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: var(--text-corrido);
+    }
+
+    /* CTA FINAL */
+    .section-cta-final {
+      background: var(--bg-geral);
+      padding: 40px 24px 60px;
+      text-align: center;
+    }
+    .section-cta-final h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .section-cta-final p {
+      max-width: 500px;
+      margin: 0 auto 32px;
+      font-size: 1.1rem;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--text-titulos);
+      color: var(--text-muted);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .footer a { color: var(--text-muted); text-decoration: underline; }
   </style>
 </head>
-
 <body>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2203490870389778&ev=PageView&noscript=1" /></noscript>
 
-  <section class="hero" id="topo">
-    <div class="hero-content">
-      <div class="reveal">
-        <div class="hero-badge">Pack Scripts Prontos · Manicure &amp; Nail Designer</div>
-        <h1>Você manda o preço.<br><em>Ela some.</em> E você fica<br>sem saber o que fazer.</h1>
-        <p class="hero-sub">Saiba exatamente o que responder para <strong>guiar a cliente até o agendamento</strong> —
-          com segurança, postura profissional e sem nunca mais travar na hora de passar o preço.</p>
-        <div class="hero-price-top">por apenas R$19,90 · acesso imediato · 7 dias de garantia</div>
-        <div class="urgency-banner">
-          ⚠️ Preço de lançamento — R$19,90 só durante o lançamento
-          <span class="small-text">Após o período de lançamento, o valor volta para R$97.</span>
-        </div>
-        <a href="https://pay.kirvano.com/cb5eb1d5-2309-4a70-85da-1aaa34e9c0a8" class="btn-primary">Quero meus Scripts Prontos por R$19,90</a>
-        <p class="hero-price-hint">por apenas <strong>R$19,90</strong> · acesso imediato</p>
-      </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Pack Scripts Prontos · Manicure & Nail Designer</div>
+      <h1>Você manda o preço.<br><em>Ela some.</em><br>E você fica sem saber o que fazer.</h1>
+      <p class="sub">Saiba exatamente o que responder para guiar a cliente até o agendamento — com segurança, postura profissional e sem nunca mais travar na hora de passar o preço.</p>
+      
+      <div class="faixa-urgencia">⚠️ Oferta de Lançamento: de R$97 por apenas <strong>R$ 19,90</strong></div>
+      
+      <a href="https://pay.kirvano.com/cb5eb1d5-2309-4a70-85da-1aaa34e9c0a8" class="btn-green">Quero a minha cópia dos Scripts</a>
+      <p class="txt-btn-baixo">Acesso imediato no seu e-mail · 7 dias de garantia</p>
     </div>
   </section>
 
+  <div class="separador">✦ ✦ ✦</div>
+
+  <!-- DOR -->
   <section class="section-dor">
     <div class="container">
-      <div class="inner reveal">
-        <div class="ornament"><span class="ornament-dot">✦ ✦ ✦</span></div>
-        <p>Você sabe fazer unhas. <strong>Isso não é o problema.</strong></p>
-        <p>O problema é o que acontece <strong>antes</strong> — na conversa.</p>
-        <p>A cliente chega animada, pergunta o preço... e <strong>some</strong>. Você fica esperando. Manda um <em>"oi,
-            tudo bem?"</em> no dia seguinte. Nada.</p>
-        <p class="highlight">"Ou pior: por não saber como conduzir a conversa, você acaba soando insegura — e é aí que a
-          cliente decide procurar a concorrente mais barata."</p>
-        <p><strong>Basta de perder dinheiro por não saber o que digitar.</strong> Você só precisa do direcionamento
-          certo.</p>
+      <div class="dor-content">
+        <p class="destaque-dor">Você sabe fazer unhas. Isso não é o problema.</p>
+        <p>O problema é o que acontece antes — na conversa.</p>
+        <p>A cliente chega animada, pergunta o preço... e some. Você fica esperando. Manda um "oi, tudo bem?" no dia seguinte. Nada.</p>
+        <p>Ou pior: por não saber como conduzir a conversa, você acaba soando insegura — e é aí que a cliente decide procurar a concorrente mais barata.</p>
+        <p>Você não precisa baixar o seu preço para lotar a agenda. Você só precisa ter em mãos as palavras que revelam o verdadeiro valor do seu trabalho.</p>
       </div>
     </div>
   </section>
 
-  <section class="section-produto">
+  <div class="separador">✦ ✦ ✦</div>
+
+  <!-- SCRIPTS GRID -->
+  <section class="section-scripts">
     <div class="container">
-      <div class="reveal">
-        <div class="ornament"><span class="ornament-dot">✦ ✦ ✦</span></div>
-        <h2 class="section-titulo">Tudo que você vai ter na ponta dos dedos</h2>
-        <p class="section-sub">Tudo que você precisa para transformar conversa em agendamento confirmado.</p>
-
-        <p class="scripts-label">7 Scripts de Atendimento</p>
-        <ul class="scripts-list">
-          <li><span class="num">01</span><span>Como recepcionar a cliente de um jeito que a faça perceber que seu
-              serviço é de alto padrão (antes mesmo de ver a tabela).</span></li>
-          <li><span class="num">02</span><span>O que responder quando ela diz "vou ver e te aviso" — e trazê-la de volta
-              para a confirmação.</span></li>
-          <li><span class="num">03</span><span>Como contornar quando acham seu serviço "caro" — sem dar desconto e sem
-              desvalorizar o seu trabalho.</span></li>
-          <li><span class="num">04</span><span>A mensagem exata para reaquecer aquele contato que parou de responder do
-              nada.</span></li>
-          <li><span class="num">05</span><span>O gatilho para fazer a cliente escolher o horário na hora, em vez de
-              deixar para depois.</span></li>
-          <li><span class="num">06</span><span>Como recuperar uma cliente que marcou e sumiu, mas mantendo a sua postura
-              impecável.</span></li>
-          <li><span class="num">07</span><span>O script de confirmação de véspera que funciona como um escudo e corta
-              suas faltas pela metade.</span></li>
-        </ul>
-
-        <div class="pratica-section reveal">
-          <h3>Veja como é na prática</h3>
-          <p class="sub">Um dos 7 scripts que você vai receber:</p>
-          
-          <div class="chat-box">
-            <div class="chat-msg right">
-              Oi [Nome]! Tudo bem?<br>
-              Só passando pra ver se ficou alguma dúvida sobre o serviço. Fico à disposição pra responder!
-            </div>
-            <div class="chat-msg left">
-              Oi! Desculpa o sumiço... <br>
-              Ainda tenho interesse sim!<br>
-              Que horário você tem essa semana?
-            </div>
-          </div>
-          
-          <p class="chat-caption">
-            Script de Recuperação — para quando a cliente sumiu após ver o preço.
-          </p>
+      <h2>Tudo que você vai ter na ponta dos dedos</h2>
+      <p class="sub">Tudo que você precisa para transformar conversa em agendamento confirmado.</p>
+      <div class="badge">7 Scripts de Atendimento</div>
+      
+      <div class="grid-scripts">
+        <div class="card-script">
+          <div class="script-num">01</div>
+          <p>Como recepcionar a cliente de um jeito que a faça perceber que seu serviço é de alto padrão (antes mesmo de ver a tabela).</p>
         </div>
-
-        <p class="bonus-label">+ 3 Bônus Exclusivos</p>
-        <div class="bonus-grid">
-          <div class="bonus-card">
-            <div class="bonus-icon-wrap">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-                </path>
-              </svg>
-            </div>
-            <h3>Guia Agenda Cheia</h3>
-            <p>Estratégias para manter sua semana lotada de agendamentos recorrentes.</p>
-          </div>
-          <div class="bonus-card">
-            <div class="bonus-icon-wrap">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </div>
-            <h3>Script 5 Estrelas</h3>
-            <p>Como pedir avaliação sem ser inconveniente e ainda gerar indicação.</p>
-          </div>
-          <div class="bonus-card">
-            <div class="bonus-icon-wrap">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z">
-                </path>
-              </svg>
-            </div>
-            <h3>Checklist Atendimento Nota 10</h3>
-            <p>Do primeiro oi ao pós-atendimento: o checklist que faz a cliente voltar.</p>
-          </div>
+        <div class="card-script">
+          <div class="script-num">02</div>
+          <p>O que responder quando ela diz 'vou ver e te aviso' — e trazê-la de volta para a confirmação.</p>
+        </div>
+        <div class="card-script">
+          <div class="script-num">03</div>
+          <p>Como contornar quando acham seu serviço 'caro' — sem dar desconto e sem desvalorizar o seu trabalho.</p>
+        </div>
+        <div class="card-script">
+          <div class="script-num">04</div>
+          <p>A mensagem exata para reaquecer aquele contato que parou de responder do nada.</p>
+        </div>
+        <div class="card-script">
+          <div class="script-num">05</div>
+          <p>O gatilho para fazer a cliente escolher o horário na hora, em vez de deixar para depois.</p>
+        </div>
+        <div class="card-script">
+          <div class="script-num">06</div>
+          <p>Como recuperar uma cliente que marcou e sumiu, mas mantendo a sua postura impecável.</p>
+        </div>
+        <div class="card-script card-full">
+          <div class="script-num">07</div>
+          <p>O script de confirmação de véspera que funciona como um escudo e corta suas faltas pela metade.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-depoimentos" id="depoimentos">
+  <!-- EXEMPLO SCRIPT -->
+  <section class="section-exemplo">
     <div class="container">
-      <div class="reveal">
-        <div class="ornament"><span class="ornament-dot">✦ ✦ ✦</span></div>
-        <h2 class="section-titulo">O que dizem quem já usa:</h2>
+      <h2>Veja como é na prática</h2>
+      <p class="sub">Um dos 7 scripts que você vai receber:</p>
+      
+      <div class="chat-box">
+        <div class="chat-header">
+          <div class="avatar">L</div>
+          <div class="info">
+            <h4>Luana Cliente</h4>
+            <p>online</p>
+          </div>
+        </div>
+        <div class="chat-body">
+          <div class="balao dir">
+            Oi [Nome]! Tudo bem?<br>
+            Só passando pra ver se ficou alguma dúvida sobre o serviço. Fico à disposição pra responder!
+            <span class="chat-time">14:30 ✓✓</span>
+          </div>
+          <div class="balao esq">
+            Oi! Desculpa o sumiço...<br>
+            Ainda tenho interesse sim!<br>
+            Que horário você tem essa semana?
+            <span class="chat-time">15:10</span>
+          </div>
+        </div>
+      </div>
+      <p class="chat-legenda">Script de Recuperação — para quando a cliente sumiu após ver o preço.</p>
+    </div>
+  </section>
+
+  <!-- BONUS -->
+  <section class="section-bonus">
+    <div class="container">
+      <div class="badge">+ 3 Bônus Exclusivos</div>
+      <div class="grid-bonus">
+        <div class="card-bonus">
+          <h4>Guia Agenda Cheia</h4>
+          <p>Estratégias para manter sua semana lotada de agendamentos recorrentes.</p>
+        </div>
+        <div class="card-bonus">
+          <h4>Script 5 Estrelas</h4>
+          <p>Como pedir avaliação sem ser inconveniente e ainda gerar indicação.</p>
+        </div>
+        <div class="card-bonus">
+          <h4>Checklist Atendimento Nota 10</h4>
+          <p>Do primeiro oi ao pós-atendimento: o checklist que faz a cliente voltar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="separador">✦ ✦ ✦</div>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section-depoimentos">
+    <div class="container">
+      <h2>O que dizem quem já usa:</h2>
+      <div class="grid-depoimentos">
         
-        <div class="depoimentos-grid">
-          <img src="/depoimento1.jpg" alt="Depoimento 1" class="depoimento-img">
-          <img src="/depoimento2.jpg" alt="Depoimento 2" class="depoimento-img">
-          <img src="/depoimento3.jpg" alt="Depoimento 3" class="depoimento-img">
+        <div class="depo-card">
+          <img src="/public/depoimento1.jpg" alt="Depoimento 1" onerror="this.style.display='none'">
+          <p class="depo-quote">"Fechei 3 agendamentos em apenas 2 dias. Sendo que antes eu ficava dias sem resposta!"</p>
+          <div class="depo-author">— Ju Nail Designer</div>
         </div>
+
+        <div class="depo-card">
+          <img src="/public/depoimento2.jpg" alt="Depoimento 2" onerror="this.style.display='none'">
+          <p class="depo-quote">"A cliente achou caro. Usei o script e marcamos o horário sem eu dar nenhum desconto!"</p>
+          <div class="depo-author">— Carol M.</div>
+        </div>
+
+        <div class="depo-card">
+          <img src="/public/depoimento3.jpg" alt="Depoimento 3" onerror="this.style.display='none'">
+          <p class="depo-quote">"Nossa, foi muito fácil mesmo. Valeu cada centavo desse investimento!"</p>
+          <div class="depo-author">— Camila G.</div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="section-oferta" id="oferta">
+  <!-- OFERTA -->
+  <section class="section-oferta">
     <div class="container">
-      <div class="oferta-card reveal">
-        <div class="oferta-label">Oferta especial</div>
-        <h2>Tenha a resposta exata na ponta dos dedos <em>por menos que uma cliente perdida</em></h2>
-        <p class="oferta-desc">Um material direto ao ponto para você copiar, adaptar e começar a usar ainda hoje.</p>
-
-        <div class="preco-antigo">de <del>R$ 97</del> por</div>
-        <div class="preco-atual">
-          <span class="currency">R$</span>
-          <span class="value">19,90</span>
-        </div>
-        <div class="preco-mini" style="margin-bottom: 12px;">pagamento único · acesso imediato</div>
-        <div class="preco-urgencia">Preço de lançamento — não sei até quando vai ficar assim.</div>
-
-        <ul class="oferta-lista">
-          <li><span class="check">✓</span><span>Domine a conversa e não seja mais ignorada</span></li>
-          <li><span class="check">✓</span><span>Aprenda a cobrar o seu valor sem sentir medo</span></li>
-          <li><span class="check">✓</span><span>Copie, adapte e veja a agenda fechar mais rápido</span></li>
-          <li><span class="check">✓</span><span>Posicionamento premium que atrai as clientes certas</span></li>
+      <div class="card-oferta">
+        <div class="badge">Oferta especial</div>
+        <h2>Tenha a resposta exata na ponta dos dedos</h2>
+        <div class="oferta-ancora">por menos do que o valor de uma esmaltação.</div>
+        <p class="sub">Um material direto ao ponto para você copiar, adaptar e começar a usar ainda hoje.</p>
+        
+        <div class="preco-riscado">de R$97 por</div>
+        <div class="preco-real">R$ 19,90</div>
+        <div class="preco-sub">pagamento único · acesso imediato</div>
+        
+        <div class="urgencia-pequena">Preço de lançamento — não sei até quando vai ficar assim.</div>
+        
+        <ul class="lista-oferta">
+          <li><span class="check">✓</span> Domine a conversa e não seja mais ignorada</li>
+          <li><span class="check">✓</span> Aprenda a cobrar o seu valor sem sentir medo</li>
+          <li><span class="check">✓</span> Copie, adapte e veja a agenda fechar mais rápido</li>
+          <li><span class="check">✓</span> Posicionamento premium que atrai as clientes certas</li>
         </ul>
-
-        <a href="https://pay.kirvano.com/cb5eb1d5-2309-4a70-85da-1aaa34e9c0a8" class="btn-primary">Quero meus Scripts Prontos por R$19,90</a>
-        <p class="compra-segura">Compra 100% segura · Acesso imediato após pagamento</p>
+        
+        <a href="https://pay.kirvano.com/cb5eb1d5-2309-4a70-85da-1aaa34e9c0a8" class="btn-green">Quero meus Scripts Prontos por R$19,90</a>
+        <p class="txt-btn-baixo" style="margin-top: 16px;">Compra 100% segura · Acesso imediato após pagamento</p>
       </div>
     </div>
   </section>
 
+  <!-- GARANTIA -->
   <section class="section-garantia">
     <div class="container">
-      <div class="garantia-inner reveal">
-        <div class="garantia-badge">
-          <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg"
-            aria-label="7 dias de garantia">
-            <circle cx="44" cy="44" r="42" stroke="#C4788A" stroke-width="1.8" />
-            <text x="44" y="40" text-anchor="middle" fill="#E8B4C0" font-family="'Cormorant Garamond', serif"
-              font-size="28" font-weight="600">7</text>
-            <text x="44" y="58" text-anchor="middle" fill="#E8B4C0" font-family="Arial, sans-serif" font-size="6.5"
-              font-weight="600" letter-spacing="1.2">DIAS DE</text>
-            <text x="44" y="67" text-anchor="middle" fill="#E8B4C0" font-family="Arial, sans-serif" font-size="6.5"
-              font-weight="600" letter-spacing="1.2">GARANTIA</text>
-          </svg>
-        </div>
-        <div class="garantia-text">
-          <h3>Satisfação garantida ou seu dinheiro de volta</h3>
-          <p>Se em 7 dias você achar que não valeu a pena — por qualquer motivo — é só falar. Devolução total, sem
-            perguntas, sem enrolação.</p>
-        </div>
-      </div>
+      <div class="selo-garantia">7</div>
+      <h2>Satisfação garantida ou seu dinheiro de volta</h2>
+      <p>Se em 7 dias você achar que não valeu a pena — por qualquer motivo — é só falar. Devolução total, sem perguntas, sem enrolação.</p>
     </div>
   </section>
 
-  <section class="section-faq">
-    <div class="container faq-wrap">
-      <div class="reveal">
-        <div class="ornament"><span class="ornament-dot">✦ ✦ ✦</span></div>
-        <h2 class="section-titulo">Dúvidas frequentes</h2>
-        <p class="section-sub">Tudo que você precisa saber antes de comprar.</p>
+  <div class="separador">✦ ✦ ✦</div>
 
+  <!-- FAQ -->
+  <section class="section-faq">
+    <div class="container">
+      <h2>Dúvidas frequentes</h2>
+      <p class="sub">Tudo que você precisa saber antes de comprar.</p>
+      
+      <div class="faq-container">
         <details class="faq-item">
           <summary>Esses scripts servem para qualquer manicure?</summary>
-          <div class="faq-answer">
-            <p>Sim. O material foi pensado para manicure e nail designer que atendem pelo WhatsApp ou direct e querem
-              responder com mais segurança e mais chance de fechar.</p>
-          </div>
+          <p>Sim. O material foi pensado para manicure e nail designer que atendem pelo WhatsApp ou direct e querem responder com mais segurança e mais chance de fechar.</p>
         </details>
-
         <details class="faq-item">
           <summary>Eu preciso copiar tudo exatamente igual?</summary>
-          <div class="faq-answer">
-            <p>Não. Você pode copiar como está ou adaptar para o seu jeito. A ideia é te dar uma base pronta para não
-              travar na hora da conversa.</p>
-          </div>
+          <p>Não. Você pode copiar como está ou adaptar para o seu jeito. A ideia é te dar uma base pronta para não travar na hora da conversa.</p>
         </details>
-
         <details class="faq-item">
           <summary>O acesso é imediato?</summary>
-          <div class="faq-answer">
-            <p>Sim. Assim que o pagamento for confirmado, você recebe acesso ao material.</p>
-          </div>
+          <p>Sim. Assim que o pagamento for confirmado, você recebe acesso ao material.</p>
         </details>
-
         <details class="faq-item">
           <summary>Tem garantia?</summary>
-          <div class="faq-answer">
-            <p>7 dias de garantia total. Se por qualquer motivo você achar que não foi o que esperava, manda um e-mail e
-              devolvemos tudo — sem questionar e sem burocracia.</p>
-          </div>
+          <p>7 dias de garantia total. Se por qualquer motivo você achar que não foi o que esperava, manda um e-mail e devolvemos tudo — sem questionar e sem burocracia.</p>
         </details>
-
         <details class="faq-item">
           <summary>Vai soar robótico ou forçado?</summary>
-          <div class="faq-answer">
-            <p>De jeito nenhum. Os scripts têm uma linguagem leve e feminina. Além disso, a estrutura permite que você
-              adapte palavras facilmente para o seu próprio jeito de falar.</p>
-          </div>
+          <p>De jeito nenhum. Os scripts têm uma linguagem leve e feminina. Além disso, a estrutura permite que você adapte palavras facilmente para o seu próprio jeito de falar.</p>
         </details>
-
         <details class="faq-item">
           <summary>Serve pra quem tem vergonha de parecer vendedora?</summary>
-          <div class="faq-answer">
-            <p>Principalmente! Os roteiros foram criados para você conduzir o agendamento com naturalidade, sem precisar
-              "empurrar" nada ou parecer que está implorando por clientes.</p>
-          </div>
+          <p>Principalmente! Os roteiros foram criados para você conduzir o agendamento com naturalidade, sem precisar 'empurrar' nada ou parecer que está implorando por clientes.</p>
         </details>
       </div>
     </div>
   </section>
 
+  <div class="separador">✦ ✦ ✦</div>
+
+  <!-- CTA FINAL -->
   <section class="section-cta-final">
     <div class="container">
-      <div class="cta-final-card reveal">
-        <div class="ornament"><span class="ornament-dot">✦ ✦ ✦</span></div>
-        <h2>Chega de perder cliente <em>na conversa</em></h2>
-        <p>Você já sabe fazer unhas. Agora falta ter as palavras certas para transformar interesse em agendamento
-          confirmado.</p>
-        <a href="https://pay.kirvano.com/cb5eb1d5-2309-4a70-85da-1aaa34e9c0a8" class="btn-primary">Quero meus Scripts Prontos por R$19,90</a>
-      </div>
+      <h2>Chega de perder cliente<br><em>na conversa</em></h2>
+      <p>Você já sabe fazer unhas. Agora falta ter as palavras certas para transformar interesse em agendamento confirmado.</p>
+      <a href="https://pay.kirvano.com/cb5eb1d5-2309-4a70-85da-1aaa34e9c0a8" class="btn-green">Quero meus Scripts Prontos por R$19,90</a>
     </div>
   </section>
 
-  <footer class="rodape">
-    © <a href="https://presencacerta.com.br">Presença Certa</a> · Todos os
-    direitos reservados<br>
-    Este produto é digital e o acesso é enviado após a confirmação do pagamento.
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <a href="https://presencacerta.com.br" target="_blank">Presença Certa</a> · Todos os direitos reservados</p>
+    <p>Este produto é digital e o acesso é enviado após a confirmação do pagamento.</p>
   </footer>
 
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => io.observe(el));
-  </script>
 </body>
-
 </html>
