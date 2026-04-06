@@ -157,6 +157,12 @@
       margin-bottom: 32px;
     }
     .texto-vendas p { margin-bottom: 16px; }
+
+    .titulo-secao {
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+      text-align: left;
+    }
     
     .lista-incluso {
       text-align: left;
@@ -257,6 +263,38 @@
       border-color: var(--separador);
     }
 
+    /* BENEFÍCIOS E FAQ */
+    .extras {
+      margin-top: 40px;
+      text-align: left;
+    }
+    .benefits-grid {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .benefit-card,
+    .faq-item {
+      background: var(--bg-alt);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .benefit-icon {
+      font-size: 1.4rem;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .benefit-card h3,
+    .faq-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .faq-list {
+      display: grid;
+      gap: 16px;
+    }
+
     /* FOOTER */
     .footer {
       background: var(--text-titulos);
@@ -266,6 +304,21 @@
       font-size: 0.85rem;
     }
     .footer a { color: var(--text-muted); text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .section-confirmacao h2 {
+        font-size: 2.7rem;
+      }
+      .card-upsell {
+        padding: 36px 22px;
+      }
+      .card-upsell h2 {
+        font-size: 1.85rem;
+      }
+      .preco-real {
+        font-size: 2.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -289,37 +342,59 @@
   <section class="section-upsell">
     <div class="container">
       <div class="card-upsell" id="oferta-box">
-        <div class="badge">Oferta única · Kit Presença Digital</div>
+        <div class="badge">Oferta Única · Kit Presença Digital</div>
         
-        <h2>Agora que você tem os scripts para fechar, precisa atrair mais clientes para o WhatsApp.</h2>
+        <h2>Agora que você tem os scripts para fechar,<br>precisa atrair mais clientes para o WhatsApp.</h2>
         
         <div class="texto-vendas">
           <p>Os scripts que você acabou de garantir farão as clientes fecharem muito mais rápido.</p>
           <p>Mas existe um detalhe que separa as amadoras das profissionais de elite: a primeira impressão.</p>
           <p>Se a cliente ver seu perfil sem identidade visual, sem tabela de preços profissional, sem stories que geram desejo — a autoridade que os scripts criaram some na hora.</p>
-          <p>Por isso criei o <strong>Kit Presença Digital</strong> — tudo que você precisa para atrair mais clientes e parecer profissional antes mesmo de eles chegarem no WhatsApp.</p>
+          <p>Por isso criei o <strong>Kit Presença Digital</strong> — tudo que você precisa para atrair mais clientes e parecer profissional antes mesmo de elas chegarem no WhatsApp.</p>
         </div>
 
+        <h3 class="titulo-secao">O que está incluso</h3>
         <ul class="lista-incluso">
           <li>
             <span class="check">✓</span>
             <div>
-              <strong>Pack de Stories Prontos no Canva</strong>
-              10 artes editáveis para divulgar seus serviços e atrair clientes todos os dias.
+              <strong>16 Templates Editáveis no Canva</strong>
+              Posts e stories prontos para divulgar seus serviços no Instagram.
             </div>
           </li>
           <li>
             <span class="check">✓</span>
             <div>
-              <strong>Tabela de Preços Editável no Canva</strong>
-              Layout profissional para você personalizar com seus serviços e valores.
+              <strong>Tabela de Preços Profissional</strong>
+              Layout elegante editável com seus serviços e valores.
             </div>
           </li>
           <li>
             <span class="check">✓</span>
             <div>
-              <strong>Tutorial passo a passo</strong>
-              Instruções de como editar e publicar no Instagram.
+              <strong>3 Scripts para Instagram Direct</strong>
+              O que responder quando a cliente chega pelo direct.
+            </div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <strong>10 Legendas Prontas para Posts</strong>
+              Copie, cole e poste — sem travar na hora de escrever.
+            </div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <strong>Guia: Como Responder Comentários</strong>
+              Transforme curtidas e comentários em clientes agendadas.
+            </div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div>
+              <strong>Passo a Passo para Angariar Clientes</strong>
+              Instagram orgânico, WhatsApp e indicação — tudo junto.
             </div>
           </li>
         </ul>
@@ -334,6 +409,47 @@
 
         <button class="btn-green kirvano-payment-trigger">Sim! Quero o Kit Presença Digital por R$47</button>
         <button class="link-recusa kirvano-refuse-trigger">Não obrigada, quero apenas os materiais que já comprei.</button>
+
+        <div class="extras">
+          <h3 class="titulo-secao">Por que esse kit vale a pena</h3>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">✨</div>
+              <h3>Tudo pronto para usar</h3>
+              <p>Templates, scripts e guias prontos. É só personalizar com o seu nome e começar a postar hoje mesmo.</p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">📱</div>
+              <h3>Funciona no Canva gratuito</h3>
+              <p>Você não precisa do Canva Pro. Tudo foi criado para funcionar na versão gratuita do Canva.</p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">💅</div>
+              <h3>Sistema completo</h3>
+              <p>Do perfil ao agendamento — você terá tudo que precisa para atrair e fechar mais clientes.</p>
+            </div>
+          </div>
+
+          <h3 class="titulo-secao">Perguntas frequentes</h3>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Preciso saber design para usar os templates?</h3>
+              <p>De jeito nenhum! É só abrir no Canva, trocar o texto e as fotos pelo seu conteúdo. Leva menos de 10 minutos por template.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Preciso ter o Canva Pro?</h3>
+              <p>Não! Todos os templates foram feitos para funcionar perfeitamente na versão gratuita do Canva.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Vou receber tudo de uma vez?</h3>
+              <p>Sim! Assim que confirmar o pagamento, você recebe acesso imediato a todos os materiais do kit.</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="oferta-expirada" class="timer-expirado" style="text-align: center;">Essa oferta expirou.</div>
     </div>
